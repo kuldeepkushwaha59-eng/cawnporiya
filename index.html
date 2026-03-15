@@ -1,78 +1,118 @@
-```html
+```html id="h8s2kt"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Cawnporiya | Coming Soon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#fff2cc,#f4b183);
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffcc70,#ff7b54,#ffb26b);
+background-size:300% 300%;
+animation:gradient 10s ease infinite;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
 text-align:center;
-color:#5b3a1e;
+padding:60px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+color:white;
+max-width:600px;
+width:90%;
 }
 
-.container{
-margin-top:100px;
-padding:20px;
-}
-
-.brand{
-font-size:55px;
-font-weight:bold;
+.logo{
+font-size:48px;
+font-weight:700;
 letter-spacing:3px;
 }
 
 .tagline{
-font-size:28px;
 margin-top:10px;
-color:#8b4513;
+font-size:20px;
+opacity:0.9;
 }
 
-.box{
-margin-top:40px;
-background:white;
-padding:40px;
-border-radius:15px;
-display:inline-block;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-h2{
+.title{
+margin-top:30px;
 font-size:32px;
+font-weight:600;
 }
 
-p{
-font-size:18px;
-color:#555;
+.desc{
+margin-top:15px;
+font-size:16px;
+opacity:0.9;
 }
 
-.timer{
-font-size:30px;
-margin-top:20px;
-color:#d35400;
-font-weight:bold;
+.countdown{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
 }
 
-.whatsapp{
+.time{
+background:rgba(255,255,255,0.2);
+padding:15px 20px;
+border-radius:10px;
+}
+
+.time span{
+display:block;
+font-size:28px;
+font-weight:700;
+}
+
+.time small{
+font-size:12px;
+}
+
+.btn{
+margin-top:30px;
 display:inline-block;
-margin-top:25px;
 padding:12px 25px;
 background:#25D366;
-color:white;
-font-size:18px;
-border-radius:8px;
+border-radius:30px;
 text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 .footer{
-margin-top:60px;
-font-size:14px;
-color:#555;
+margin-top:30px;
+font-size:13px;
+opacity:0.8;
 }
 
 </style>
@@ -81,45 +121,67 @@ color:#555;
 
 <body>
 
-<div class="container">
+<div class="card">
 
-<div class="brand">CAWNPORIYA</div>
+<div class="logo">CAWNPORIYA</div>
 <div class="tagline">Sudh Sahi Swadeshi</div>
 
-<div class="box">
+<div class="title">🚧 Website Launching Soon</div>
 
-<h2>🚧 Website Coming Soon</h2>
+<div class="desc">
+हम आपके लिए शुद्ध देसी गुड़ और पारंपरिक भारतीय उत्पाद लेकर जल्द आ रहे हैं।
+</div>
 
-<p>हम आपके लिए शुद्ध देसी गुड़ और प्राकृतिक उत्पाद लेकर बहुत जल्द आ रहे हैं</p>
+<div class="countdown">
 
-<div class="timer" id="countdown"></div>
+<div class="time">
+<span id="days">0</span>
+<small>DAYS</small>
+</div>
 
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">WhatsApp Us</a>
+<div class="time">
+<span id="hours">0</span>
+<small>HOURS</small>
+</div>
+
+<div class="time">
+<span id="minutes">0</span>
+<small>MIN</small>
+</div>
+
+<div class="time">
+<span id="seconds">0</span>
+<small>SEC</small>
+</div>
 
 </div>
 
+<a class="btn" href="https://wa.me/917860398340">WhatsApp Us</a>
+
 <div class="footer">
-© 2026 Cawnporiya | All Rights Reserved
+© 2026 Cawnporiya • All Rights Reserved
 </div>
 
 </div>
 
 <script>
 
-var launch = new Date("June 1, 2026 00:00:00").getTime();
+var launchDate = new Date("April 1, 2026 00:00:00").getTime();
 
 var x = setInterval(function(){
 
 var now = new Date().getTime();
-var distance = launch - now;
+var distance = launchDate - now;
 
 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-document.getElementById("countdown").innerHTML =
-days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
 
 },1000);
 
