@@ -4,47 +4,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cawnporiya - Coming Soon</title>
+<title>Cawnporiya | Coming Soon</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#f7e7c6,#fff5e1);
+font-family:Arial;
+background:linear-gradient(135deg,#fff2cc,#f4b183);
 text-align:center;
-color:#5a3b1e;
+color:#5b3a1e;
 }
 
 .container{
-margin-top:120px;
+margin-top:100px;
 padding:20px;
 }
 
-.logo{
-font-size:50px;
+.brand{
+font-size:55px;
 font-weight:bold;
-letter-spacing:2px;
+letter-spacing:3px;
 }
 
 .tagline{
-font-size:26px;
-color:#c26a00;
+font-size:28px;
 margin-top:10px;
+color:#8b4513;
 }
 
 .box{
 margin-top:40px;
 background:white;
-display:inline-block;
 padding:40px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+border-radius:15px;
+display:inline-block;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 h2{
 font-size:32px;
-margin-bottom:10px;
 }
 
 p{
@@ -52,10 +51,28 @@ font-size:18px;
 color:#555;
 }
 
+.timer{
+font-size:30px;
+margin-top:20px;
+color:#d35400;
+font-weight:bold;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#25D366;
+color:white;
+font-size:18px;
+border-radius:8px;
+text-decoration:none;
+}
+
 .footer{
 margin-top:60px;
 font-size:14px;
-color:#777;
+color:#555;
 }
 
 </style>
@@ -66,13 +83,19 @@ color:#777;
 
 <div class="container">
 
-<div class="logo">CAWNPORIYA</div>
+<div class="brand">CAWNPORIYA</div>
 <div class="tagline">Sudh Sahi Swadeshi</div>
 
 <div class="box">
+
 <h2>🚧 Website Coming Soon</h2>
-<p>हम आपके लिए शुद्ध देसी गुड़ और पारंपरिक उत्पाद लेकर बहुत जल्द आ रहे हैं।</p>
-<p>Stay Connected!</p>
+
+<p>हम आपके लिए शुद्ध देसी गुड़ और प्राकृतिक उत्पाद लेकर बहुत जल्द आ रहे हैं</p>
+
+<div class="timer" id="countdown"></div>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">WhatsApp Us</a>
+
 </div>
 
 <div class="footer">
@@ -80,6 +103,27 @@ color:#777;
 </div>
 
 </div>
+
+<script>
+
+var launch = new Date("June 1, 2026 00:00:00").getTime();
+
+var x = setInterval(function(){
+
+var now = new Date().getTime();
+var distance = launch - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+},1000);
+
+</script>
 
 </body>
 </html>
