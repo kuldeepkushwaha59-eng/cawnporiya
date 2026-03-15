@@ -1,7 +1,8 @@
-```html id="h8s2kt"
+```html id="m8s2ap"
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,100 +20,157 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
+
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ffcc70,#ff7b54,#ffb26b);
-background-size:300% 300%;
-animation:gradient 10s ease infinite;
+
+background:linear-gradient(-45deg,#f6d365,#fda085,#ff9a9e,#fbc2eb);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+
+color:white;
+
 }
 
 @keyframes gradient{
+
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
+
 }
 
 .card{
+
 text-align:center;
 padding:60px;
 border-radius:20px;
+
 background:rgba(255,255,255,0.15);
-backdrop-filter:blur(15px);
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-color:white;
-max-width:600px;
+backdrop-filter:blur(20px);
+
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+
 width:90%;
+max-width:650px;
+
 }
 
 .logo{
-font-size:48px;
+
+font-size:52px;
 font-weight:700;
 letter-spacing:3px;
+
 }
 
 .tagline{
-margin-top:10px;
+
+margin-top:8px;
 font-size:20px;
 opacity:0.9;
+
 }
 
 .title{
+
 margin-top:30px;
-font-size:32px;
+font-size:34px;
 font-weight:600;
+
 }
 
 .desc{
+
 margin-top:15px;
 font-size:16px;
 opacity:0.9;
+
 }
 
 .countdown{
+
 margin-top:30px;
 display:flex;
 justify-content:center;
-gap:20px;
+gap:18px;
+
 }
 
 .time{
+
 background:rgba(255,255,255,0.2);
-padding:15px 20px;
+padding:15px 18px;
 border-radius:10px;
+
 }
 
 .time span{
+
 display:block;
 font-size:28px;
 font-weight:700;
+
 }
 
 .time small{
+
 font-size:12px;
+
 }
 
-.btn{
-margin-top:30px;
+.whatsapp{
+
+margin-top:25px;
 display:inline-block;
+
 padding:12px 25px;
+
 background:#25D366;
+
 border-radius:30px;
+
 text-decoration:none;
+
 color:white;
+
 font-weight:500;
-transition:0.3s;
+
 }
 
-.btn:hover{
-transform:scale(1.05);
+.email-box{
+
+margin-top:25px;
+
+}
+
+.email-box input{
+
+padding:10px;
+border:none;
+border-radius:5px;
+width:65%;
+
+}
+
+.email-box button{
+
+padding:10px 15px;
+border:none;
+border-radius:5px;
+background:#ff7b54;
+color:white;
+
 }
 
 .footer{
-margin-top:30px;
+
+margin-top:25px;
 font-size:13px;
 opacity:0.8;
+
 }
 
 </style>
@@ -124,42 +182,71 @@ opacity:0.8;
 <div class="card">
 
 <div class="logo">CAWNPORIYA</div>
+
 <div class="tagline">Sudh Sahi Swadeshi</div>
 
 <div class="title">🚧 Website Launching Soon</div>
 
 <div class="desc">
+
 हम आपके लिए शुद्ध देसी गुड़ और पारंपरिक भारतीय उत्पाद लेकर जल्द आ रहे हैं।
+
 </div>
 
 <div class="countdown">
 
 <div class="time">
+
 <span id="days">0</span>
+
 <small>DAYS</small>
+
 </div>
 
 <div class="time">
+
 <span id="hours">0</span>
+
 <small>HOURS</small>
+
 </div>
 
 <div class="time">
+
 <span id="minutes">0</span>
+
 <small>MIN</small>
+
 </div>
 
 <div class="time">
+
 <span id="seconds">0</span>
+
 <small>SEC</small>
-</div>
 
 </div>
 
-<a class="btn" href="https://wa.me/917860398340">WhatsApp Us</a>
+</div>
+
+<a class="whatsapp" href="https://wa.me/917860398340">
+
+WhatsApp Us
+
+</a>
+
+<div class="email-box">
+
+<input type="email" placeholder="Enter your email">
+
+<button>Notify Me</button>
+
+</div>
 
 <div class="footer">
+
 © 2026 Cawnporiya • All Rights Reserved
+
 </div>
 
 </div>
@@ -168,19 +255,26 @@ opacity:0.8;
 
 var launchDate = new Date("April 1, 2026 00:00:00").getTime();
 
-var x = setInterval(function(){
+setInterval(function(){
 
 var now = new Date().getTime();
+
 var distance = launchDate - now;
 
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+var days = Math.floor(distance / (1000*60*60*24));
+
+var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+var seconds = Math.floor((distance%(1000*60))/1000);
 
 document.getElementById("days").innerHTML = days;
+
 document.getElementById("hours").innerHTML = hours;
+
 document.getElementById("minutes").innerHTML = minutes;
+
 document.getElementById("seconds").innerHTML = seconds;
 
 },1000);
