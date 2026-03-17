@@ -1,6 +1,5 @@
-```html id="m8s2ap"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 
 <meta charset="UTF-8">
@@ -20,156 +19,192 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 
-background:linear-gradient(-45deg,#f6d365,#fda085,#ff9a9e,#fbc2eb);
+background:linear-gradient(-45deg,#f59e0b,#f97316,#facc15,#fb7185);
 background-size:400% 400%;
-animation:gradient 12s ease infinite;
+animation:gradient 10s ease infinite;
 
 color:white;
-
+overflow:hidden;
 }
 
+/* BACKGROUND ANIMATION */
 @keyframes gradient{
-
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
-
 }
 
+/* CARD */
 .card{
-
 text-align:center;
-padding:60px;
-border-radius:20px;
+padding:60px 40px;
+border-radius:25px;
 
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(20px);
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(25px);
 
-box-shadow:0 15px 40px rgba(0,0,0,0.25);
+box-shadow:0 20px 60px rgba(0,0,0,0.3);
 
 width:90%;
 max-width:650px;
 
+border:1px solid rgba(255,255,255,0.2);
+
+/* ENTRY ANIMATION */
+animation:fadeIn 1.2s ease;
 }
 
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* LOGO */
 .logo{
-
-font-size:52px;
+font-size:50px;
 font-weight:700;
-letter-spacing:3px;
-
+letter-spacing:4px;
+background:linear-gradient(to right,#fff,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
+/* TAGLINE */
 .tagline{
-
 margin-top:8px;
-font-size:20px;
+font-size:18px;
 opacity:0.9;
-
+letter-spacing:2px;
 }
 
+/* TITLE */
 .title{
-
 margin-top:30px;
-font-size:34px;
+font-size:32px;
 font-weight:600;
-
 }
 
+/* DESC */
 .desc{
-
 margin-top:15px;
-font-size:16px;
+font-size:15px;
 opacity:0.9;
-
+line-height:1.6;
 }
 
+/* COUNTDOWN */
 .countdown{
-
 margin-top:30px;
 display:flex;
 justify-content:center;
-gap:18px;
-
+gap:15px;
+flex-wrap:wrap;
 }
 
 .time{
-
 background:rgba(255,255,255,0.2);
 padding:15px 18px;
-border-radius:10px;
+border-radius:12px;
+min-width:80px;
+transition:0.3s;
+}
 
+.time:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.3);
 }
 
 .time span{
-
 display:block;
-font-size:28px;
+font-size:26px;
 font-weight:700;
-
+color:#FFD700;
 }
 
-.time small{
-
-font-size:12px;
-
-}
-
+/* WHATSAPP BUTTON */
 .whatsapp{
-
 margin-top:25px;
 display:inline-block;
 
-padding:12px 25px;
-
+padding:12px 28px;
 background:#25D366;
 
 border-radius:30px;
-
 text-decoration:none;
-
 color:white;
 
-font-weight:500;
-
+font-weight:600;
+transition:0.3s;
 }
 
+.whatsapp:hover{
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* FLOATING WHATSAPP */
+.float-wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* EMAIL BOX */
 .email-box{
-
 margin-top:25px;
-
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .email-box input{
-
-padding:10px;
+padding:12px;
 border:none;
-border-radius:5px;
-width:65%;
-
+border-radius:8px;
+width:250px;
+outline:none;
 }
 
 .email-box button{
-
-padding:10px 15px;
+padding:12px 18px;
 border:none;
-border-radius:5px;
-background:#ff7b54;
+border-radius:8px;
+background:#000;
 color:white;
-
+cursor:pointer;
+transition:0.3s;
 }
 
-.footer{
+.email-box button:hover{
+background:#FFD700;
+color:black;
+}
 
+/* FOOTER */
+.footer{
 margin-top:25px;
 font-size:13px;
 opacity:0.8;
+}
+
+/* MOBILE */
+@media(max-width:500px){
+
+.logo{font-size:36px;}
+.title{font-size:24px;}
 
 }
 
@@ -182,74 +217,45 @@ opacity:0.8;
 <div class="card">
 
 <div class="logo">CAWNPORIYA</div>
+<div class="tagline">SHUDDH • SAHI • SWADESHI</div>
 
-<div class="tagline">Sudh Sahi Swadeshi</div>
-
-<div class="title">🚧 Website Launching Soon</div>
+<div class="title">🚀 Launching 1 April 2026</div>
 
 <div class="desc">
-
-हम आपके लिए शुद्ध देसी गुड़ और पारंपरिक भारतीय उत्पाद लेकर जल्द आ रहे हैं।
-
+हम आपके लिए शुद्ध देसी गुड़ और प्राकृतिक कृषि उत्पाद लेकर जल्द आ रहे हैं।
+सीधे खेत से आपके घर तक।
 </div>
 
 <div class="countdown">
 
-<div class="time">
-
-<span id="days">0</span>
-
-<small>DAYS</small>
-
-</div>
-
-<div class="time">
-
-<span id="hours">0</span>
-
-<small>HOURS</small>
+<div class="time"><span id="days">0</span><small>DAYS</small></div>
+<div class="time"><span id="hours">0</span><small>HOURS</small></div>
+<div class="time"><span id="minutes">0</span><small>MIN</small></div>
+<div class="time"><span id="seconds">0</span><small>SEC</small></div>
 
 </div>
 
-<div class="time">
-
-<span id="minutes">0</span>
-
-<small>MIN</small>
-
-</div>
-
-<div class="time">
-
-<span id="seconds">0</span>
-
-<small>SEC</small>
-
-</div>
-
-</div>
-
-<a class="whatsapp" href="https://wa.me/917860398340">
-
-WhatsApp Us
-
+<a class="whatsapp" 
+href="https://wa.me/917860398340?text=Hello%20Cawnporiya,%20mujhe%20gud%20ke%20bare%20mein%20jaankari%20chahiye" 
+target="_blank">
+💬 WhatsApp Us
 </a>
 
 <div class="email-box">
-
-<input type="email" placeholder="Enter your email">
-
-<button>Notify Me</button>
-
+<input type="email" id="email" placeholder="Enter your email">
+<button onclick="saveEmail()">Notify Me</button>
 </div>
 
 <div class="footer">
-
 © 2026 Cawnporiya • All Rights Reserved
-
 </div>
 
 </div>
+
+<!-- FLOAT BUTTON -->
+<a class="float-wa" 
+href="https://wa.me/917860398340?text=Hello%20Cawnporiya" 
+target="_blank">💬</a>
 
 <script>
 
@@ -258,29 +264,39 @@ var launchDate = new Date("April 1, 2026 00:00:00").getTime();
 setInterval(function(){
 
 var now = new Date().getTime();
-
 var distance = launchDate - now;
 
-var days = Math.floor(distance / (1000*60*60*24));
+if(distance < 0){
+distance = 0;
+}
 
-var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var d = Math.floor(distance/(1000*60*60*24));
+var h = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var m = Math.floor((distance%(1000*60*60))/(1000*60));
+var s = Math.floor((distance%(1000*60))/1000);
 
-var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-
-var seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("days").innerHTML = days;
-
-document.getElementById("hours").innerHTML = hours;
-
-document.getElementById("minutes").innerHTML = minutes;
-
-document.getElementById("seconds").innerHTML = seconds;
+document.getElementById("days").innerHTML = d;
+document.getElementById("hours").innerHTML = h;
+document.getElementById("minutes").innerHTML = m;
+document.getElementById("seconds").innerHTML = s;
 
 },1000);
+
+/* EMAIL FUNCTION */
+function saveEmail(){
+let email = document.getElementById("email").value;
+
+if(email === "" || !email.includes("@")){
+alert("Please enter valid email");
+return;
+}
+
+alert("Thanks! We will notify you 🚀");
+
+// future: send to backend
+}
 
 </script>
 
 </body>
 </html>
-```
