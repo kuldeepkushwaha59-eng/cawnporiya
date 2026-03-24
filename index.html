@@ -150,7 +150,136 @@
     </style>
 </head>
 <body>
+<div class="launch-container">
+    <div class="offer-badge">Flat 50% OFF</div>
+    <div class="banner-main">
+        <div class="text-content">
+            <span class="launch-label">Grand Opening: 1st April 2026</span>
+            <h2>शुद्धता का उत्सव - स्वदेशी का विश्वास!</h2>
+            <p>पहले 100 ग्राहकों के लिए हमारे सभी उत्पादों पर <strong>सीधे 50% की छूट</strong>।</p>
+        </div>
+        
+        <div class="countdown-wrapper">
+            <p>लॉन्च होने में शेष समय:</p>
+            <div id="countdown-timer">
+                <div class="time-box"><span id="days">00</span><small>दिन</small></div>
+                <div class="time-box"><span id="hours">00</span><small>घंटे</small></div>
+                <div class="time-box"><span id="minutes">00</span><small>मिनट</small></div>
+            </div>
+        </div>
 
+        <div class="cta-section">
+            <a href="https://wa.me/917860398340?text=I%20want%20to%20register%20for%2050%25%20Launch%20Offer" class="pre-register-btn">
+                <i class="fab fa-whatsapp"></i> अभी प्री-रजिस्टर करें
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Banner Styling */
+    .launch-container {
+        background: linear-gradient(135deg, #4b2c15 0%, #7d4e2d 100%);
+        color: #fff;
+        padding: 30px 5%;
+        text-align: center;
+        position: relative;
+        border-bottom: 4px solid #f3e5ab;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    .offer-badge {
+        background: #e67e22;
+        color: #fff;
+        padding: 8px 25px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        transform: rotate(45deg);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 10;
+        width: 200px;
+    }
+
+    .launch-label {
+        background: #f3e5ab;
+        color: #7d4e2d;
+        padding: 4px 15px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    .text-content h2 { font-size: 2.2rem; margin-bottom: 10px; color: #f3e5ab; }
+    .text-content p { font-size: 1.2rem; margin-bottom: 25px; font-weight: 300; }
+
+    /* Countdown Styling */
+    .countdown-wrapper p { font-size: 0.9rem; margin-bottom: 10px; opacity: 0.9; }
+    #countdown-timer { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+    
+    .time-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 15px;
+        border-radius: 10px;
+        min-width: 80px;
+        border: 1px solid rgba(243, 229, 171, 0.3);
+    }
+    .time-box span { display: block; font-size: 1.8rem; font-weight: 700; color: #f3e5ab; }
+    .time-box small { font-size: 0.75rem; text-transform: uppercase; }
+
+    /* Button Styling */
+    .pre-register-btn {
+        background: #25d366;
+        color: #fff !important;
+        text-decoration: none;
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: inline-block;
+        transition: 0.3s;
+        box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    }
+    .pre-register-btn:hover { background: #128c7e; transform: scale(1.05); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .text-content h2 { font-size: 1.6rem; }
+        .text-content p { font-size: 1rem; }
+        .offer-badge { font-size: 1rem; width: 150px; right: -40px; }
+        .time-box { min-width: 65px; padding: 8px; }
+        .time-box span { font-size: 1.4rem; }
+    }
+</style>
+
+<script>
+    // Countdown Logic for 1st April 2026
+    const targetDate = new Date("April 1, 2026 00:00:00").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("days").innerHTML = d < 10 ? "0" + d : d;
+        document.getElementById("hours").innerHTML = h < 10 ? "0" + h : h;
+        document.getElementById("minutes").innerHTML = m < 10 ? "0" + m : m;
+
+        if (diff < 0) {
+            clearInterval(x);
+            document.querySelector(".countdown-wrapper").innerHTML = "<h3>लॉन्च हो चुका है! डिस्काउंट का लाभ उठाएं!</h3>";
+        }
+    }, 1000);
+</script>
 <header>
     <a href="#" class="logo">CAWNPORYA</a>
     <nav>
