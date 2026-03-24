@@ -1,302 +1,265 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cawnporiya | Shuddh aur Desi Gur Utpad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/body/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #7d4e2d; /* Jaggery Brown */
+            --secondary-color: #f4e9dc; /* Light Cream */
+            --accent-color: #2e7d32; /* Organic Green */
+            --text-dark: #333;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: var(--text-dark);
+        }
 
-<title>Cawnporiya | Coming Soon</title>
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
 
-<style>
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
 
-background:linear-gradient(-45deg,#f59e0b,#f97316,#facc15,#fb7185);
-background-size:400% 400%;
-animation:gradient 10s ease infinite;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1596431718253-6a9787e91d09?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
 
-color:white;
-overflow:hidden;
-}
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
 
-/* BACKGROUND ANIMATION */
-@keyframes gradient{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
+        .cta-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
 
-/* CARD */
-.card{
-text-align:center;
-padding:60px 40px;
-border-radius:25px;
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px 5%;
+            background: var(--secondary-color);
+            text-align: center;
+        }
 
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(25px);
+        .feature-box i {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
 
-box-shadow:0 20px 60px rgba(0,0,0,0.3);
+        /* Product Collection */
+        .collections {
+            padding: 80px 5%;
+            text-align: center;
+        }
 
-width:90%;
-max-width:650px;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-border:1px solid rgba(255,255,255,0.2);
+        .product-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
 
-/* ENTRY ANIMATION */
-animation:fadeIn 1.2s ease;
-}
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
-}
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
 
-/* LOGO */
-.logo{
-font-size:50px;
-font-weight:700;
-letter-spacing:4px;
-background:linear-gradient(to right,#fff,#ffd700);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        .price {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
 
-/* TAGLINE */
-.tagline{
-margin-top:8px;
-font-size:18px;
-opacity:0.9;
-letter-spacing:2px;
-}
+        /* Footer */
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 50px 5% 20px;
+            text-align: center;
+        }
 
-/* TITLE */
-.title{
-margin-top:30px;
-font-size:32px;
-font-weight:600;
-}
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
 
-/* DESC */
-.desc{
-margin-top:15px;
-font-size:15px;
-opacity:0.9;
-line-height:1.6;
-}
-
-/* COUNTDOWN */
-.countdown{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.time{
-background:rgba(255,255,255,0.2);
-padding:15px 18px;
-border-radius:12px;
-min-width:80px;
-transition:0.3s;
-}
-
-.time:hover{
-transform:translateY(-5px);
-background:rgba(255,255,255,0.3);
-}
-
-.time span{
-display:block;
-font-size:26px;
-font-weight:700;
-color:#FFD700;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp{
-margin-top:25px;
-display:inline-block;
-
-padding:12px 28px;
-background:#25D366;
-
-border-radius:30px;
-text-decoration:none;
-color:white;
-
-font-weight:600;
-transition:0.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.05);
-box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* FLOATING WHATSAPP */
-.float-wa{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:14px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* EMAIL BOX */
-.email-box{
-margin-top:25px;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.email-box input{
-padding:12px;
-border:none;
-border-radius:8px;
-width:250px;
-outline:none;
-}
-
-.email-box button{
-padding:12px 18px;
-border:none;
-border-radius:8px;
-background:#000;
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
-
-.email-box button:hover{
-background:#FFD700;
-color:black;
-}
-
-/* FOOTER */
-.footer{
-margin-top:25px;
-font-size:13px;
-opacity:0.8;
-}
-
-/* MOBILE */
-@media(max-width:500px){
-
-.logo{font-size:36px;}
-.title{font-size:24px;}
-
-}
-
-</style>
-
+        /* Schema.org Placeholder */
+        .faq-section { padding: 50px 5%; }
+    </style>
 </head>
-
 <body>
 
-<div class="card">
+    <nav>
+        <div class="logo">Cawnporiya</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#collections">Shop All</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Track Order</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fa fa-search"></i> &nbsp;
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+    </nav>
 
-<div class="logo">CAWNPORIYA</div>
-<div class="tagline">SHUDDH • SAHI • SWADESHI</div>
+    <header class="hero">
+        <h1>Prakritik Mithas, Kanpur Ka Ehsas</h1>
+        <p>100% Chemical-Free aur Organic Gur Products seedhe kheton se.</p>
+        <a href="#collections" class="cta-btn">Abhi Khareedein</a>
+    </header>
 
-<div class="title">🚀 Launching 1 April 2026</div>
+    <section class="features">
+        <div class="feature-box">
+            <i class="fa fa-leaf"></i>
+            <h3>100% Organic</h3>
+            <p>Koi milawat nahi, sirf shuddh ganna.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa fa-flask-vial"></i>
+            <h3>Chemical Free</h3>
+            <p>Bina kisi sulphur ya artificial rang ke.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa fa-truck"></i>
+            <h3>Pan India Delivery</h3>
+            <p>Aapke ghar tak surakshit pahunch.</p>
+        </div>
+    </section>
 
-<div class="desc">
-हम आपके लिए शुद्ध देसी गुड़ और प्राकृतिक कृषि उत्पाद लेकर जल्द आ रहे हैं।
-सीधे खेत से आपके घर तक।
-</div>
+    <section id="collections" class="collections">
+        <h2>Hamari Khaas Collections</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1621944203117-06249971844b?auto=format&fit=crop&q=80&w=500" alt="Masala Gur">
+                <h3>Authentic Masala Gur</h3>
+                <p>Sonth, Ajwain aur Dry Fruits se bharpoor.</p>
+                <p class="price">₹299.00</p>
+                <a href="#" class="cta-btn">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1590080875515-8a03b1447d1a?auto=format&fit=crop&q=80&w=500" alt="Jaggery Powder">
+                <h3>Organic Jaggery Powder</h3>
+                <p>Cheeni ka sabse swasth vikalp.</p>
+                <p class="price">₹149.00</p>
+                <a href="#" class="cta-btn">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1589114473223-c44fc7c35193?auto=format&fit=crop&q=80&w=500" alt="Liquid Jaggery">
+                <h3>Cawnporiya Liquid Gur (Kakvi)</h3>
+                <p>Prakritik energy booster.</p>
+                <p class="price">₹199.00</p>
+                <a href="#" class="cta-btn">Add to Cart</a>
+            </div>
+        </div>
+    </section>
 
-<div class="countdown">
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div itemscope itemtype="https://schema.org/FAQPage">
+            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Kya Cawnporiya Gur puri tarah organic hai?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <div itemprop="text">Haan, hamara gur bina kisi chemical ya sulphur ke paramparik vidhi se banaya jata hai.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="time"><span id="days">0</span><small>DAYS</small></div>
-<div class="time"><span id="hours">0</span><small>HOURS</small></div>
-<div class="time"><span id="minutes">0</span><small>MIN</small></div>
-<div class="time"><span id="seconds">0</span><small>SEC</small></div>
-
-</div>
-
-<a class="whatsapp" 
-href="https://wa.me/917860398340?text=Hello%20Cawnporiya,%20mujhe%20gud%20ke%20bare%20mein%20jaankari%20chahiye" 
-target="_blank">
-💬 WhatsApp Us
-</a>
-
-<div class="email-box">
-<input type="email" id="email" placeholder="Enter your email">
-<button onclick="saveEmail()">Notify Me</button>
-</div>
-
-<div class="footer">
-© 2026 Cawnporiya • All Rights Reserved
-</div>
-
-</div>
-
-<!-- FLOAT BUTTON -->
-<a class="float-wa" 
-href="https://wa.me/917860398340?text=Hello%20Cawnporiya" 
-target="_blank">💬</a>
-
-<script>
-
-var launchDate = new Date("April 1, 2026 00:00:00").getTime();
-
-setInterval(function(){
-
-var now = new Date().getTime();
-var distance = launchDate - now;
-
-if(distance < 0){
-distance = 0;
-}
-
-var d = Math.floor(distance/(1000*60*60*24));
-var h = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-var m = Math.floor((distance%(1000*60*60))/(1000*60));
-var s = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("days").innerHTML = d;
-document.getElementById("hours").innerHTML = h;
-document.getElementById("minutes").innerHTML = m;
-document.getElementById("seconds").innerHTML = s;
-
-},1000);
-
-/* EMAIL FUNCTION */
-function saveEmail(){
-let email = document.getElementById("email").value;
-
-if(email === "" || !email.includes("@")){
-alert("Please enter valid email");
-return;
-}
-
-alert("Thanks! We will notify you 🚀");
-
-// future: send to backend
-}
-
-</script>
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Cawnporiya</h3>
+                <p>Kanpur Agro Farms ka ek vishwasniya brand.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <p>Refund Policy</p>
+                <p>Shipping Policy</p>
+                <p>Terms of Service</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Email: support@cawnporiya.com</p>
+                <p>Location: Kanpur, Uttar Pradesh</p>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; 2026 Cawnporiya. All Rights Reserved. Built for Farmers.</p>
+    </footer>
 
 </body>
 </html>
