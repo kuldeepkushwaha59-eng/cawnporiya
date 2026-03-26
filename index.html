@@ -10,9 +10,8 @@
 
     <style>
         :root {
-            --primary-brown: #5d3a21;
+            --primary-brown: #4a2c16;
             --accent-gold: #d4af37;
-            --soft-cream: #fdfaf5;
             --leaf-green: #2e7d32;
             --text-dark: #2c2c2c;
         }
@@ -22,16 +21,14 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             color: var(--text-dark); 
-            background-color: #fff;
+            background-color: #fdfaf5;
             scroll-behavior: smooth;
         }
 
         h1, h2, .logo { font-family: 'Playfair Display', serif; }
 
-        /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: #fff;
             padding: 15px 8%;
             display: flex;
             justify-content: space-between;
@@ -40,54 +37,27 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
-        .logo { 
-            font-size: 28px; 
-            font-weight: 700; 
-            color: var(--primary-brown); 
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
+        .logo { font-size: 28px; font-weight: 700; color: var(--primary-brown); text-decoration: none; }
 
-        /* Coming Soon Banner (No Timer) */
+        /* Important: Coming Soon Banner (No Timer) */
         .coming-soon-banner {
             background: var(--primary-brown);
             color: var(--accent-gold);
             padding: 12px;
             text-align: center;
+            margin-top: 70px;
             font-weight: 600;
-            letter-spacing: 1px;
-            margin-top: 70px; /* Space for fixed header */
             border-bottom: 2px solid var(--accent-gold);
-            text-transform: uppercase;
-            font-size: 0.9rem;
         }
 
-        .cta-button {
-            background: var(--primary-brown);
-            color: #fff !important;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(93, 58, 33, 0.2);
-            border: none;
-        }
-        .cta-button:hover { 
-            background: var(--accent-gold); 
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Hero Section with High-Quality Image */
+        /* Hero Section with Verified Background */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1590733401035-7798308d5138?auto=format&fit=crop&q=80&w=1600');
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1590733401035-7798308d5138?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -95,141 +65,101 @@
             justify-content: center;
             text-align: center;
             color: #fff;
-            padding: 0 20px;
         }
 
-        .hero-content h1 { font-size: 4rem; margin-bottom: 15px; line-height: 1.2; }
-        .hero-content .tagline { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 30px; font-weight: 300; }
-        
-        /* Features */
-        .features {
-            padding: 80px 8%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            background: var(--soft-cream);
-        }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 10px; }
 
-        .feature-card {
-            background: #fff;
-            padding: 40px 25px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .feature-card i { font-size: 40px; color: var(--leaf-green); margin-bottom: 20px; }
-
-        /* Products */
-        .products { padding: 100px 8%; text-align: center; }
+        /* Products Grid */
+        .products { padding: 60px 8%; text-align: center; }
         .product-grid { 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 40px auto 0;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        .product-item {
+        .product-card {
             background: #fff;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border: 1px solid #eee;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
-        
-        /* Product Image - High Resolution Links */
-        .product-img { 
-            width: 100%; 
-            height: 300px; 
-            object-fit: cover; 
+
+        /* Fixed Image Handling */
+        .product-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
             display: block;
-            background-color: #f0f0f0; /* Fallback color */
         }
 
-        .product-info { padding: 30px; }
-        .price { font-size: 1.6rem; color: var(--leaf-green); font-weight: 700; display: block; margin: 15px 0; }
-
-        /* Footer */
-        footer { background: #1a110a; color: rgba(255,255,255,0.7); padding: 60px 8% 30px; text-align: center; }
-        .footer-logo { font-size: 32px; color: #fff; margin-bottom: 10px; display: block; letter-spacing: 2px; }
-
-        @media(max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero { height: 60vh; }
+        .product-info { padding: 25px; }
+        
+        .cta-btn {
+            background: var(--primary-brown);
+            color: #fff !important;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 15px;
         }
+
+        footer { background: #1a110a; color: #fff; padding: 40px; text-align: center; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="#" class="logo">CAWNPORYIA</a>
-    <a href="https://wa.me/917860398340" class="cta-button"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+    <a href="https://wa.me/917860398340" class="cta-btn"><i class="fab fa-whatsapp"></i> Order Now</a>
 </header>
 
 <div class="coming-soon-banner">
-    <i class="fas fa-bullhorn"></i> &nbsp; Cawnporiya Premium Jaggery - Coming Soon to Your Kitchen!
+    ✨ Cawnporiya Premium Jaggery – शुद्धता का नया नाम, जल्द आ रहा है!
 </div>
 
-<section class="hero" id="home">
+<section class="hero">
     <div class="hero-content">
-        <p class="tagline">"शुद्ध • सही • स्वदेशी"</p>
+        <h2 style="color:var(--accent-gold)">"शुद्ध • सही • स्वदेशी"</h2>
         <h1>Shuddh Gur, Seedha Khet Se</h1>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 35px;">
-            Kanpur Agro Farms LLP द्वारा तैयार रसायन मुक्त और पारंपरिक असली गुड़।
-        </p>
-        <a href="#products" class="cta-button">हमारे उत्पाद देखें</a>
-    </div>
-</section>
-
-<section class="features">
-    <div class="feature-card">
-        <i class="fas fa-leaf"></i>
-        <h3>100% प्राकृतिक</h3>
-        <p>बिना किसी केमिकल या मिलावट के, केवल ताज़ा गन्ने के रस से तैयार।</p>
-    </div>
-    <div class="feature-card">
-        <i class="fas fa-heart"></i>
-        <h3>सेहतमंद विकल्प</h3>
-        <p>चीनी का सबसे शुद्ध और हेल्दी विकल्प, जो आयरन से भरपूर है।</p>
-    </div>
-    <div class="feature-card">
-        <i class="fas fa-truck"></i>
-        <h3>खेत से सीधे</h3>
-        <p>बिना किसी बिचौलिये के, सीधे हमारे खेतों से आपके घर तक।</p>
+        <p>Kanpur Agro Farms LLP की ओर से रसायन मुक्त और पारंपरिक गुड़।</p>
     </div>
 </section>
 
 <section class="products" id="products">
     <h2 style="font-size: 2.5rem; color: var(--primary-brown);">Premium Selections</h2>
     <div class="product-grid">
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1610450510526-724838f3253a?auto=format&fit=crop&q=80&w=800" class="product-img" alt="Desi Gur Blocks">
+        
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1610450510526-724838f3253a?w=600&q=80" class="product-img" alt="Desi Gur">
             <div class="product-info">
                 <h3>Desi Gur (Blocks)</h3>
-                <p>पारंपरिक ढेली वाला गुड़, असली स्वाद और शुद्धता के साथ।</p>
-                <span class="price">₹150 / Kg</span>
-                <a href="https://wa.me/917860398340" class="cta-button">Pre-Book Now</a>
+                <p>बिना किसी मिलावट के शुद्ध पारंपरिक गुड़।</p>
+                <p style="font-size: 1.5rem; color: var(--leaf-green); font-weight: 700;">₹150 / Kg</p>
+                <a href="https://wa.me/917860398340" class="cta-btn">WhatsApp Order</a>
             </div>
         </div>
         
-        <div class="product-item">
-            <img src="https://images.unsplash.com/photo-1622321458043-3b1029281a8b?auto=format&fit=crop&q=80&w=800" class="product-img" alt="Jaggery Powder">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1622321458043-3b1029281a8b?w=600&q=80" class="product-img" alt="Jaggery Powder">
             <div class="product-info">
                 <h3>Jaggery Powder</h3>
-                <p>चाय और कॉफ़ी के लिए बेहतरीन, आसानी से घुलने वाला गुड़ पाउडर।</p>
-                <span class="price">₹180 / Kg</span>
-                <a href="https://wa.me/917860398340" class="cta-button">Pre-Book Now</a>
+                <p>उपयोग में आसान और सेहतमंद गुड़ पाउडर।</p>
+                <p style="font-size: 1.5rem; color: var(--leaf-green); font-weight: 700;">₹180 / Kg</p>
+                <a href="https://wa.me/917860398340" class="cta-btn">WhatsApp Order</a>
             </div>
         </div>
+
     </div>
 </section>
 
 <footer>
-    <span class="footer-logo">CAWNPORYIA</span>
-    <p style="color: var(--accent-gold); font-weight: 600; margin-bottom: 15px;">Unit of Kanpur Agro Farms LLP</p>
-    <div style="font-size: 0.8rem; letter-spacing: 1px;">
-        © 2026 CAWNPORYIA | शुद्ध • सही • स्वदेशी
-    </div>
+    <p style="font-size: 1.5rem; letter-spacing: 2px;">CAWNPORYIA</p>
+    <p style="color: var(--accent-gold);">Unit of Kanpur Agro Farms LLP</p>
+    <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.6;">© 2026 | पीतापुर, कानपुर देहात</p>
 </footer>
 
 </body>
