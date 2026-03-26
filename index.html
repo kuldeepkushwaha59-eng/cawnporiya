@@ -42,7 +42,7 @@
 
         .logo { font-size: 28px; font-weight: 700; color: var(--primary-brown); text-decoration: none; }
 
-        /* Important: Coming Soon Banner (No Timer) */
+        /* Coming Soon Banner - No Date/Timer */
         .coming-soon-banner {
             background: var(--primary-brown);
             color: var(--accent-gold);
@@ -51,9 +51,10 @@
             margin-top: 70px;
             font-weight: 600;
             border-bottom: 2px solid var(--accent-gold);
+            font-size: 0.95rem;
         }
 
-        /* Hero Section with Verified Background */
+        /* Hero Section with High-Res Image */
         .hero {
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -65,11 +66,11 @@
             justify-content: center;
             text-align: center;
             color: #fff;
+            padding: 0 20px;
         }
 
         .hero-content h1 { font-size: 3rem; margin-bottom: 10px; }
 
-        /* Products Grid */
         .products { padding: 60px 8%; text-align: center; }
         .product-grid { 
             display: grid;
@@ -80,34 +81,37 @@
 
         .product-card {
             background: #fff;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: 0.4s;
+            border: 1px solid #eee;
         }
+        .product-card:hover { transform: translateY(-10px); border-color: var(--accent-gold); }
 
-        /* Fixed Image Handling */
+        /* Verified Product Images */
         .product-img {
             width: 100%;
-            height: 280px;
+            height: 300px;
             object-fit: cover;
             display: block;
         }
 
-        .product-info { padding: 25px; }
+        .product-info { padding: 30px; }
+        .price { font-size: 1.8rem; color: var(--leaf-green); font-weight: 700; display: block; margin: 15px 0; }
         
         .cta-btn {
             background: var(--primary-brown);
             color: #fff !important;
-            padding: 10px 25px;
-            border-radius: 25px;
+            padding: 12px 30px;
+            border-radius: 30px;
             text-decoration: none;
             display: inline-block;
             font-weight: 600;
-            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        footer { background: #1a110a; color: #fff; padding: 40px; text-align: center; }
+        footer { background: #1a110a; color: #fff; padding: 50px 8%; text-align: center; }
     </style>
 </head>
 <body>
@@ -118,38 +122,38 @@
 </header>
 
 <div class="coming-soon-banner">
-    ✨ Cawnporiya Premium Jaggery – शुद्धता का नया नाम, जल्द आ रहा है!
+    <i class="fas fa-bullhorn"></i> &nbsp; Cawnporiya Premium Jaggery – शुद्ध देसी स्वाद, जल्द आ रहा है!
 </div>
 
 <section class="hero">
     <div class="hero-content">
-        <h2 style="color:var(--accent-gold)">"शुद्ध • सही • स्वदेशी"</h2>
+        <h2 style="color:var(--accent-gold); margin-bottom:10px;">"शुद्ध • सही • स्वदेशी"</h2>
         <h1>Shuddh Gur, Seedha Khet Se</h1>
-        <p>Kanpur Agro Farms LLP की ओर से रसायन मुक्त और पारंपरिक गुड़।</p>
+        <p style="font-size:1.1rem; opacity:0.9;">Kanpur Agro Farms LLP गर्व से पेश करते हैं रसायन मुक्त और पारंपरिक गुड़।</p>
     </div>
 </section>
 
 <section class="products" id="products">
-    <h2 style="font-size: 2.5rem; color: var(--primary-brown);">Premium Selections</h2>
+    <h2 style="font-size: 2.5rem; color: var(--primary-brown); margin-bottom: 40px;">Premium Selections</h2>
     <div class="product-grid">
         
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1610450510526-724838f3253a?w=600&q=80" class="product-img" alt="Desi Gur">
+            <img src="https://images.unsplash.com/photo-1610450510526-724838f3253a?w=800&auto=format&fit=crop" class="product-img" alt="Desi Jaggery">
             <div class="product-info">
                 <h3>Desi Gur (Blocks)</h3>
-                <p>बिना किसी मिलावट के शुद्ध पारंपरिक गुड़।</p>
-                <p style="font-size: 1.5rem; color: var(--leaf-green); font-weight: 700;">₹150 / Kg</p>
-                <a href="https://wa.me/917860398340" class="cta-btn">WhatsApp Order</a>
+                <p>बिना किसी मिलावट के शुद्ध पारंपरिक ढेली वाला गुड़।</p>
+                <span class="price">₹150 / Kg</span>
+                <a href="https://wa.me/917860398340" class="cta-btn">Pre-Book Now</a>
             </div>
         </div>
         
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1622321458043-3b1029281a8b?w=600&q=80" class="product-img" alt="Jaggery Powder">
+            <img src="https://images.unsplash.com/photo-1622321458043-3b1029281a8b?w=800&auto=format&fit=crop" class="product-img" alt="Jaggery Powder">
             <div class="product-info">
                 <h3>Jaggery Powder</h3>
-                <p>उपयोग में आसान और सेहतमंद गुड़ पाउडर।</p>
-                <p style="font-size: 1.5rem; color: var(--leaf-green); font-weight: 700;">₹180 / Kg</p>
-                <a href="https://wa.me/917860398340" class="cta-btn">WhatsApp Order</a>
+                <p>उपयोग में आसान और सेहतमंद, चाय-दूध के लिए उत्तम।</p>
+                <span class="price">₹180 / Kg</span>
+                <a href="https://wa.me/917860398340" class="cta-btn">Pre-Book Now</a>
             </div>
         </div>
 
@@ -157,9 +161,12 @@
 </section>
 
 <footer>
-    <p style="font-size: 1.5rem; letter-spacing: 2px;">CAWNPORYIA</p>
-    <p style="color: var(--accent-gold);">Unit of Kanpur Agro Farms LLP</p>
-    <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.6;">© 2026 | पीतापुर, कानपुर देहात</p>
+    <p style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px;">CAWNPORYIA</p>
+    <p style="color: var(--accent-gold); margin-bottom: 20px;">Unit of Kanpur Agro Farms LLP</p>
+    <div style="font-size: 0.85rem; opacity: 0.7;">
+        © 2026 CAWNPORYIA | पीतापुर, कानपुर देहात, उत्तर प्रदेश <br>
+        शुद्धता की गारंटी, सीधे हमारे खेतों से।
+    </div>
 </footer>
 
 </body>
